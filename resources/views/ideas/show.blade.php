@@ -1,5 +1,11 @@
 @extends('layout.app')
 
+@if (!$editing)
+    @section('title', 'View Idea')
+@else
+    @section('title', 'Edit Idea')
+@endif
+
 @section('content')
 
     <body>

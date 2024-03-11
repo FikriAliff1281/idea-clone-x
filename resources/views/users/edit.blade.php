@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title', 'Edit Profile')
+
 @section('content')
 
     <body>

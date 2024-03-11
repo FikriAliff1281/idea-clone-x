@@ -10,19 +10,34 @@
                         </a></h5>
                 </div>
             </div>
-            <div class="d-flex">
-                <a class="mt-1" href="{{ route('ideas.show', $idea->id) }}">View</a>
-                @auth()
-                    @can('update', $idea)
-                        <a class="mx-2 mt-1" href="{{ route('ideas.edit', $idea->id) }}">Edit</a>
-                        <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
-                            @csrf
-                            @method('delete')
-                            <button class="ms-1 btn btn-danger btn-sm">X</button>
-                        </form>
-                    @endcan
-                @endauth
-            </div>
+            @if (!$editing)
+                <div class="d-flex">
+                    <a class="mt-1" href="{{ route('ideas.show', $idea->id) }}">View</a>
+                    @auth()
+                        @can('update', $idea)
+                            <a class="mx-2 mt-1" href="{{ route('ideas.edit', $idea->id) }}">Edit</a>
+                            <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
+                                @csrf
+                                @method('delete')
+                                <button class="ms-1 btn btn-danger btn-sm">X</button>
+                            </form>
+                        @endcan
+                    @endauth
+                </div>
+            @else
+                <div class="d-flex">
+                    @auth()
+                        @can('update', $idea)
+                            <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
+                                @csrf
+                                @method('delete')
+                                <button class="ms-1 btn btn-danger btn-sm">X</button>
+                            </form>
+                        @endcan
+                    @endauth
+                </div>
+            @endif
+
         </div>
     </div>
     <div class="card-body">
