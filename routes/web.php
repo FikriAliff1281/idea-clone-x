@@ -31,6 +31,13 @@ Route::get('/terms', function(){
     return view('terms');
 })->name('terms');
 
+Route::get('/lang/{lang}', function($lang){
+    app()->setLocale($lang);
+    session()->put('locale', $lang);
+
+    return redirect()->route('dashboard');
+})->name('lang');
+
 
 // Ideas
 Route::resource('ideas', IdeaController::class)->except(['index','create','show'])->middleware('auth');

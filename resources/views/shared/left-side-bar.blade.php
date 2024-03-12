@@ -18,6 +18,7 @@
         </ul>
     </div>
     <div class="card-footer text-center py-2">
-        <a class="btn btn-link btn-sm" href="#"> {{ __('ideas.view_profile') }} </a>
+        <a class="btn btn-link btn-sm" href="{{ route('lang', 'en') }}"> EN </a>
+        <a class="btn btn-link btn-sm" href="{{ route('lang', 'ms') }}"> MY </a>
     </div>
 </div>
