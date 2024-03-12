@@ -18,7 +18,9 @@ class UserController extends Controller
     {
         $ideas = $user->ideas()->paginate(5);
 
-        return view("users.show", compact("user", "ideas"));
+        $editing = false;
+
+        return view("users.show", compact("user", "ideas" , "editing"));
     }
 
     /**
@@ -30,7 +32,7 @@ class UserController extends Controller
 
         $ideas = $user->ideas()->paginate(5);
 
-        return view("users.edit", compact("user", "ideas"));
+        return view("users.edit", compact("user", "ideas", "editing"));
     }
 
     /**

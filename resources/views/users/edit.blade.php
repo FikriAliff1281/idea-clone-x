@@ -23,7 +23,7 @@
                     </div>
                 @empty
                     <p class="text-center mt-4">
-                        No Results Found.
+                        {{ __('ideas.no_results') }}
                     </p>
                 @endforelse
             </div>

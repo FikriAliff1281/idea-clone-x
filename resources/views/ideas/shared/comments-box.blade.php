@@ -8,7 +8,7 @@
             @enderror
         </div>
         <div>
-            <button type="submit" class="btn btn-primary btn-sm"> Post Comment </button>
+            <button type="submit" class="btn btn-primary btn-sm"> {{ __('ideas.post_comment') }} </button>
         </div>
 
         <hr>
@@ -32,7 +32,7 @@
             </div>
         @empty
             <p class="text-center mt-4">
-                No Comments Found.
+                {{ __('ideas.no_comment_found') }}
             </p>
         @endforelse
     </form>

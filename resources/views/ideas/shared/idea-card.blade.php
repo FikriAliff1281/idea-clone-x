@@ -12,10 +12,10 @@
             </div>
             @if (!$editing)
                 <div class="d-flex">
-                    <a class="mt-1" href="{{ route('ideas.show', $idea->id) }}">View</a>
+                    <a class="mt-1" href="{{ route('ideas.show', $idea->id) }}">{{ __('ideas.view') }}</a>
                     @auth()
                         @can('update', $idea)
-                            <a class="mx-2 mt-1" href="{{ route('ideas.edit', $idea->id) }}">Edit</a>
+                            <a class="mx-2 mt-1" href="{{ route('ideas.edit', $idea->id) }}">{{ __('ideas.edit') }}</a>
                             <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
                                 @csrf
                                 @method('delete')

@@ -10,7 +10,7 @@
                 @include('shared.left-side-bar')
             </div>
             <div class="col-6">
-                <h1>Terms</h1>
+                <h1>{{ __('ideas.terms') }}</h1>
                 <div>
                     Lorem Ipsum passage, and going through the cites of the word in classical literature,
                     discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus

@@ -8,7 +8,7 @@
         @enderror
     </div>
     <div class="">
-        <button type="submit" class="btn btn-dark mb-2 btn-sm"> Update </button>
-        <a href="{{ route('ideas.show', $idea->id) }}" class="btn btn-danger mb-2 btn-sm"> Cancel </a>
+        <button type="submit" class="btn btn-dark mb-2 btn-sm"> {{ __('ideas.update') }} </button>
+        <a href="{{ route('ideas.show', $idea->id) }}" class="btn btn-danger mb-2 btn-sm"> {{ __('ideas.cancel') }} </a>
     </div>
 </form>

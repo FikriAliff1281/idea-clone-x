@@ -17,20 +17,20 @@
                 <div>
                     @auth
                         @if (Auth::id() === $user->id)
-                            <a href="{{ route('users.show', $user->id) }}">Cancel</a>
+                            <a href="{{ route('users.show', $user->id) }}">{{ __('ideas.cancel') }}</a>
                         @endif
                     @endauth
                 </div>
             </div>
             <div class="mt-4">
-                <label for="image">Profile Picture</label>
+                <label for="image">{{ __('ideas.profile_pic') }}</label>
                 <input type="file" name="image" class="form-control">
                 @error('image')
                     <span class="d-block fs-6 text-danger mt-2"> {{ $message }} </span>
                 @enderror
             </div>
             <div class="px-2 mt-4">
-                <h5 class="fs-5"> Bio : </h5>
+                <h5 class="fs-5"> {{ __('ideas.bio') }} : </h5>
                 <div class="mb-3">
                     <textarea class="form-control" id="bio" name="bio" rows="3">{{ $user->bio }}</textarea>
                     @error('bio')
@@ -38,7 +38,7 @@
                     @enderror
                 </div>
                 <button class="btn btn-dark btn-sm mb-3">
-                    Update
+                    {{ __('ideas.update') }}
                 </button>
                 @include('users.shared.user-stats')
             </div>
